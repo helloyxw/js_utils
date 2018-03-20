@@ -20,3 +20,12 @@ function getSearchParams() {
 	}
 	return param;
 }
+
+/**
+ * 函数绑定：用call或apply模拟原生的bind
+ */
+function bind(fn, context) {
+	return function() {
+		fn.apply(context, arguments);  // arguments是指内部函数的，不是外部bind的
+	}
+}
